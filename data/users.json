@@ -1,0 +1,69 @@
+{
+  "amitgandre": {
+    "name": "Amit Gandre",
+    "email": "amitgandre@gmail.com",
+    "role": "Company Administrator",
+    "password_hash": "scrypt$c0757969b23d0a8e5b10c9891f22befd$b6f429896af79cc1dc1395af155cb41f03cc658ddd0a9a877a8ef2a328987f3d61af7a94730947a25740c9fc7855bc742dfdeb8661cd4bd01a2b931f0f586ebe",
+    "temporary": false,
+    "active": true,
+    "email_status": "Not sent"
+  },
+  "johnsmith": {
+    "name": "John Smith",
+    "email": "amitgandre@gmail.com",
+    "role": "Salesperson",
+    "password_hash": "scrypt$b6f9de6fff7f132b4b1abb19975e87c2$9313d156542a6d7ad31dcad0c79f20bb2fa8d853a900897464c18291f1d0ad0d5c2d1289b83d535a366b5515e91205f16c4308be813011a9296c0ef954d96f48",
+    "temporary": true,
+    "active": true,
+    "email_status": "Password reset email accepted by SMTP"
+  },
+  "alansmith": {
+    "name": "Alan Smith",
+    "email": "amitgandre@gmail.com",
+    "role": "Executive Dashboard",
+    "password_hash": "scrypt$036b30d3e502bd4ab954d5cd2b96921b$c90e6958250ca1b05297d1da6c54c01473849877e76e6705f2a0349663176a7f05f90172019a2e5ea1c02b7f51b446e4eef1904988237eb8711422887fd44554",
+    "temporary": false,
+    "active": true,
+    "email_status": "Password reset email accepted by SMTP"
+  },
+  "erikasmith": {
+    "name": "Erika Smith",
+    "email": "amitgandre@gmail.com",
+    "role": "Salesperson",
+    "password_hash": "scrypt$41292a455270954022081990664cc8cf$b1d71e99e3c23fadde85793af19dcdb550e84da74c8d79cc559b157501cd01bd43fe2e3b1afcde56e00b750666efb36156731435a97c5f18a8460c8cd127c307",
+    "temporary": false,
+    "active": true,
+    "email_status": "Username reminder accepted by SMTP"
+  },
+  "test": {
+    "name": "test",
+    "email": "amitgandre@gmail.com",
+    "role": "Salesperson",
+    "password_hash": "scrypt$98c18363757d23e5bee72bf864ed7d87$55cdd364427d1cb4f9b147ac9405452fd41317d4cf307fbb929361e8e322cf9a8fb7d590ae029a642ec6b51a64ab0eefab646f89bd0b1d2ee25c37807b81c825",
+    "temporary": true,
+    "active": false,
+    "email_status": "Delivery failed after 0/2 emails; reset and resend",
+    "deleted": true,
+    "deleted_at": "2026-10-10T02:14:15.175898+00:00"
+  },
+  "test1": {
+    "name": "test1",
+    "email": "amitgandre@gmail.com",
+    "role": "Salesperson",
+    "password_hash": "scrypt$9405c90e0fb0009646a8129216032dd4$129ca02e6b9aae03d5cc70520d9c94cf4dfbd6abba553e38b23cd7250ec3d4a64003b3eca005d0ac8ce90d7713a3d2bb4c29aaa72ef4f92a2f35e8058f8a3d99",
+    "temporary": true,
+    "active": false,
+    "email_status": "Both emails accepted by SMTP",
+    "deleted": true,
+    "deleted_at": "2026-10-10T02:14:27.138278+00:00"
+  },
+  "mavens": {
+    "name": "Mavens",
+    "email": "amitgandre@gmail.com",
+    "role": "Company Administrator",
+    "password_hash": "scrypt$13f7b3246b8ecf1d2c5221ccafd109c6$52f1a07ceb023493b5a2d2fba2df554027804328bca04b42adfd27157c1dd6a681764797e671fb89675f5f0572e14749ab84201aa5ce28f1872fc57dfc9f4648",
+    "temporary": true,
+    "active": true,
+    "email_status": "Both emails accepted by SMTP"
+  }
+}
