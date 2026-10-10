@@ -1,0 +1,49 @@
+<!doctype html><html><body><script>
+const send = (type, fields = {}) => parent.postMessage({isStreamlitMessage:true, type, ...fields}, '*');
+let token = '', lastActivity = 0, lastReport = 0, idleMs = 900000, timer, pending;
+const emit = kind => send('streamlit:setComponentValue', {value:{token, kind, activity_at:lastActivity / 1000, id:Date.now() + ':' + Math.random()}, dataType:'json'});
+const clearCookie = () => {document.cookie = 'crm_session=; Path=/; SameSite=Strict; Max-Age=0';};
+function expire() {
+  if (!token) return;
+  clearCookie();
+  emit('expired');
+  clearTimeout(timer);
+  clearTimeout(pending);
+}
+function arm() {
+  clearTimeout(timer);
+  if (token) timer = setTimeout(expire, Math.max(0, lastActivity + idleMs - Date.now()));
+}
+function report() {
+  lastReport = Date.now();
+  emit('activity');
+}
+function activity(event) {
+  if (!token || !event.isTrusted) return;
+  if (Date.now() - lastActivity >= idleMs) {expire(); return;}
+  lastActivity = Date.now();
+  arm();
+  clearTimeout(pending);
+  if (Date.now() - lastReport >= 30000) report();
+  else pending = setTimeout(report, 30000 - (Date.now() - lastReport));
+}
+for (const name of ['pointerdown', 'pointermove', 'keydown', 'wheel', 'touchstart']) {
+  parent.document.addEventListener(name, activity, {capture:true, passive:true});
+}
+parent.document.addEventListener('visibilitychange', () => {
+  if (token && Date.now() - lastActivity >= idleMs) expire();
+});
+window.addEventListener('message', event => {
+  if (event.source !== parent || event.data.type !== 'streamlit:render') return;
+  const args = event.data.args;
+  const changed = token !== (args.token || '');
+  token = args.token || '';
+  idleMs = args.idle_seconds * 1000;
+  lastActivity = changed ? args.last_activity * 1000 : Math.max(lastActivity, args.last_activity * 1000);
+  if (changed) {clearTimeout(pending); lastReport = Date.now();}
+  document.cookie = 'crm_session=' + encodeURIComponent(token) + '; Path=/; SameSite=Strict; Max-Age=' + (token ? 43200 : 0) + (location.protocol === 'https:' ? '; Secure' : '');
+  arm();
+  send('streamlit:setFrameHeight', {height:0});
+});
+send('streamlit:componentReady', {apiVersion:1});
+</script></body></html>
