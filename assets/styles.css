@@ -1,0 +1,59 @@
+:root { --crm-navy:#102A43; --crm-teal:#087F8C; --crm-muted:#62788A; }
+.block-container {padding-top:1.8rem; padding-bottom:5rem; max-width:1450px}
+[data-testid="stAppViewContainer"] {background:#F3F6FA}
+[data-testid="stHeader"] {background:rgba(243,246,250,.94)}
+h1,h2,h3 {color:var(--crm-navy); letter-spacing:-.035em}
+h1 {font-weight:750} h3 {font-weight:650}
+[data-testid="stForm"] {background:white; border:1px solid #DEE7EE; border-radius:14px; padding:22px; box-shadow:0 3px 14px rgba(16,42,67,.035)}
+[data-testid="stMetric"] {background:white; padding:18px 22px; border-radius:12px; border:1px solid #DEE7EE; border-top:3px solid #087F8C; box-shadow:0 3px 12px rgba(16,42,67,.035)}
+[data-testid="stMetricLabel"] {color:#62788A; font-size:13px}
+[data-testid="stMetricValue"] {color:#102A43; font-weight:700}
+.stButton button,.stFormSubmitButton button,.stDownloadButton button {border-radius:8px; font-weight:600; transition:box-shadow .15s,border-color .15s}
+.stButton button:hover,.stFormSubmitButton button:hover,.stDownloadButton button:hover {box-shadow:0 3px 9px rgba(8,127,140,.12)}
+button[kind="primary"] {background:#087F8C; border-color:#087F8C; color:white}
+button[kind="primary"]:hover {background:#066976; border-color:#066976; color:white}
+[data-baseweb="tab-list"] {gap:8px; border-bottom:1px solid #DEE7EE; margin-bottom:14px}
+[data-baseweb="tab"] {padding:12px 20px; font-weight:600}
+[data-baseweb="tab"][aria-selected="true"] {background:#E6F3F4; border-radius:8px 8px 0 0; color:#087F8C}
+[data-testid="stPlotlyChart"] {background:white; border:1px solid #DEE7EE; border-radius:12px; overflow:hidden}
+[data-testid="stExpander"] {border-color:#DEE7EE; background:white; border-radius:12px}
+[data-testid="stSidebar"] {background:#102A43; border-right:none}
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"],
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p,
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] h1,
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] h2 {color:#F0F6FA}
+[data-testid="stSidebar"] [data-testid="stCaptionContainer"],
+[data-testid="stSidebar"] [data-testid="stCaptionContainer"] p {color:#B3C8D7}
+[data-testid="stSidebar"] hr {border-color:#29465E}
+[data-testid="stSidebar"] button {background:#1B3C55; border-color:#36536B; color:white}
+[data-testid="stSidebar"] button:hover {background:#244B67; color:white}
+.crm-brand {display:flex; align-items:center; gap:10px; margin-bottom:24px; color:#102A43; font-size:20px; font-weight:750; letter-spacing:-.5px}
+.crm-brand-mark {background:#087F8C; color:white; width:36px; height:36px; border-radius:10px; display:grid; place-items:center; font-size:24px}
+.crm-hero {background:linear-gradient(120deg,#102A43 0%,#163E57 65%,#087F8C 100%); border-radius:18px; padding:38px; color:white; margin-bottom:18px; position:relative; overflow:hidden}
+.crm-hero h1 {color:white; font-size:38px; line-height:1.16; margin:14px 0; max-width:580px}
+.crm-hero p {color:#D3E4EE; font-size:15px; line-height:1.8; max-width:580px; margin-bottom:20px}
+.crm-eyebrow {font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#8FDADD}
+.crm-chip {display:inline-block; background:rgba(255,255,255,.09); border:1px solid rgba(255,255,255,.18); border-radius:20px; padding:6px 12px; font-size:12px; color:#E0F0F5; margin:0 6px 6px 0}
+.crm-feature {background:white; border:1px solid #DEE7EE; border-radius:12px; padding:16px 20px; margin-bottom:10px; border-left:3px solid #087F8C}
+.crm-feature strong {color:#102A43; font-size:14px}
+.crm-feature p {color:#62788A; font-size:13px; margin:5px 0 0; line-height:1.6}
+.crm-page-banner {background:linear-gradient(105deg,#102A43,#164E63); padding:24px 28px; border-radius:14px; margin-bottom:24px; color:white; border-right:5px solid #0FA3A3}
+.crm-page-banner h1 {color:white; font-size:30px; margin:6px 0 4px}
+.crm-page-banner p {color:#C4DCE7; font-size:14px; margin:0}
+.crm-sidebar-brand {font-size:21px; font-weight:750; color:#F0F6FA; margin-bottom:4px}
+.crm-sidebar-brand span {color:#54C7CB}
+.crm-sidebar-tagline {color:#A3BDCF; font-size:11px; text-transform:uppercase; letter-spacing:1.6px; margin-bottom:26px}
+.crm-footer {position:fixed; bottom:0; left:0; right:0; padding:10px 16px; background:#F3F6FA; border-top:1px solid #DEE7EE; color:#62788A; font-size:12px; text-align:center; z-index:1000}
+@media(max-width:768px) {.crm-hero {padding:25px}.crm-hero h1 {font-size:30px}.crm-page-banner {padding:20px}.block-container {padding-top:1rem}}
+
+[class*="st-key-account_row_"] [data-testid="stMarkdownContainer"] p {text-align:center}
+
+/* Show full metric values; wrap instead of truncating narrow cards. */
+[data-testid="stMetricValue"], [data-testid="stMetricValue"] > div {
+font-size:clamp(16px,1.6vw,25px); white-space:normal; overflow:visible;
+text-overflow:clip; overflow-wrap:anywhere; line-height:1.3;
+}
+[data-testid="stMetricLabel"], [data-testid="stMetricLabel"] p {
+white-space:normal; overflow:visible; text-overflow:clip;
+}
+[class*="st-key-account_row_"] [data-testid="stMarkdownContainer"] p {overflow-wrap:anywhere; white-space:normal}

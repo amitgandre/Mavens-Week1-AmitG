@@ -1,0 +1,13 @@
+[project]
+name = "intelligent-crm"
+version = "0.1.0"
+description = "Role-based CRM with Excel persistence and opportunity analytics"
+requires-python = ">=3.12"
+dependencies = ["streamlit>=1.45,<2", "pandas>=2.2,<3", "openpyxl>=3.1,<4", "plotly>=6,<7", "filelock>=3.18,<4", "python-dotenv>=1.0,<2", "certifi>=2024.2.2"]
+
+[dependency-groups]
+dev = ["pytest>=8,<10"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
